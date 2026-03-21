@@ -58,7 +58,7 @@ export default function TechnicalArchitecture() {
         {STEPS.map((step, i) => (
           <div key={step.label} className="flex items-center">
             <div
-              className="flex flex-col items-center gap-3 p-5 rounded-2xl w-40"
+              className="flex flex-col items-center gap-3 p-5 rounded-2xl w-48"
               style={{
                 border: `2px solid ${step.borderColor}`,
                 backgroundColor: "var(--card)",

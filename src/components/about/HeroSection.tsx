@@ -1,6 +1,6 @@
 export default function HeroSection() {
   return (
-    <section className="px-6 py-16 text-center" style={{ backgroundColor: "var(--background)" }}>
+    <section className="px-6 pt-16 pb-2 text-center" style={{ backgroundColor: "var(--background)" }}>
       <h1
         className="text-5xl font-semibold mb-6"
         style={{ color: "var(--foreground)" }}
@@ -8,7 +8,7 @@ export default function HeroSection() {
         Why We Built Stegamorphs
       </h1>
       <p
-        className="max-w-2xl mx-auto text-base leading-relaxed"
+        className="max-w-3xl mx-auto text-base leading-relaxed"
         style={{ color: "var(--muted-foreground)" }}
       >
         Stegamorphs is a cybersecurity capstone project focused on privacy-preserving
