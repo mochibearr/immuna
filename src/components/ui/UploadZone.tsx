@@ -1,24 +1,25 @@
 import { useCallback, useRef, useState } from "react";
 import { Upload } from "lucide-react";
-
+import React from "react";
+ 
 interface UploadZoneProps {
   onFileSelect: (file: File) => void;
   preview: string | null;
 }
-
+ 
 const ACCEPTED = ["image/png", "image/jpeg", "image/gif"];
-
+ 
 export default function UploadZone({ onFileSelect, preview }: UploadZoneProps) {
   const [dragOver, setDragOver] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
-
+ 
   const handleFile = useCallback(
     (file: File) => {
       if (ACCEPTED.includes(file.type)) onFileSelect(file);
     },
     [onFileSelect]
   );
-
+ 
   const handleDrop = useCallback(
     (e: React.DragEvent) => {
       e.preventDefault();
@@ -28,10 +29,10 @@ export default function UploadZone({ onFileSelect, preview }: UploadZoneProps) {
     },
     [handleFile]
   );
-
+ 
   return (
     <div
-      className="relative rounded-xl border-2 border-dashed flex flex-col items-center justify-center min-h-[200px] cursor-pointer transition-colors duration-200 overflow-hidden"
+      className="relative rounded-xl border-2 border-dashed flex flex-col items-center justify-center min-h-[200px] h-full cursor-pointer transition-colors duration-200 overflow-hidden"
       style={{
         borderColor: dragOver ? "var(--accent)" : "var(--border)",
         backgroundColor: dragOver ? "rgba(159,134,192,0.06)" : "var(--muted)",
@@ -54,7 +55,7 @@ export default function UploadZone({ onFileSelect, preview }: UploadZoneProps) {
           if (file) handleFile(file);
         }}
       />
-
+ 
       {preview ? (
         <img
           src={preview}
@@ -67,12 +68,26 @@ export default function UploadZone({ onFileSelect, preview }: UploadZoneProps) {
             className="w-12 h-12 rounded-full flex items-center justify-center"
             style={{ backgroundColor: "var(--secondary)" }}
           >
-            <Upload className="w-5 h-5" style={{ color: "var(--accent)" }} />
+            <svg width="0" height="0">
+              <defs>
+                <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#8FE3F7" />
+                  <stop offset="50%" stopColor="#C6A4FF" />
+                  <stop offset="100%" stopColor="#F3B6D6" />
+                </linearGradient>
+              </defs>
+            </svg>
+
+            {React.cloneElement(<Upload className="w-5 h-5" />, {
+              stroke: "url(#iconGradient)",
+            })}
           </div>
           <div>
             <p className="text-sm font-medium" style={{ color: "var(--foreground)" }}>
               Drag and drop an image here, or{" "}
-              <span style={{ color: "var(--accent)" }}>click to select</span>
+              <span className="bg-gradient-to-r from-[#8FE3F7] via-[#C6A4FF] to-[#F3B6D6] bg-clip-text text-transparent">
+                click to select
+              </span>
             </p>
             <p className="text-xs mt-1" style={{ color: "var(--muted-foreground)" }}>
               PNG, JPG, or GIF up to 10MB

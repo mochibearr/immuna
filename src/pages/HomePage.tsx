@@ -28,7 +28,7 @@ export default function HomePage() {
  
   return (
     <main className="w-full">
-      <section className="px-6 pt-20 pb-12 text-center" style={{ backgroundColor: "var(--background)" }}>
+      <section className="px-6 pt-20 pb-12 text-center bg-transparent">
         <h1 className="text-3xl md:text-4xl font-semibold mb-3" style={{ color: "var(--foreground)" }}>
           Protecting Image Authenticity Against AI Manipulation
         </h1>

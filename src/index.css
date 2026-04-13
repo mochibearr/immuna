@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
  
-:root {
+/* :root {
   --font-size: 16px;
   --background: #FAF7FF;
   --foreground: #2B2D42;
@@ -25,7 +25,48 @@
   --font-weight-medium: 500;
   --font-weight-normal: 400;
 }
- 
+*/
+
+:root {
+  --font-size: 16px;
+
+  /* Base */
+  --background: #0A0A0F;
+  --foreground: #FFFFFF;
+
+  /* Cards */
+  --card: #12121A;
+  --card-foreground: #FFFFFF;
+
+  /* Primary (gradient will be applied in components) */
+  --primary: #C6A4FF;
+  --primary-foreground: #0A0A0F;
+
+  /* Secondary */
+  --secondary: #1A1A24;
+  --secondary-foreground: #B8B8C5;
+
+  /* Muted */
+  --muted: #12121A;
+  --muted-foreground: #7A7A8C;
+
+  /* Accent (holographic tones) */
+  --accent: #C6A4FF;
+  --accent-foreground: #FFFFFF;
+
+  /* Destructive */
+  --destructive: #d4183d;
+
+  /* Borders / UI */
+  --border: rgba(198, 164, 255, 0.2);
+  --ring: #C6A4FF;
+
+  --radius: 1rem;
+
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+}
+
 @layer base {
   *, *::before, *::after {
     box-sizing: border-box;

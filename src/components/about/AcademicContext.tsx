@@ -15,7 +15,7 @@ export default function AcademicContext() {
 
       <div className="space-y-4 text-base leading-relaxed" style={{ color: "var(--muted-foreground)" }}>
         <p>
-          Stegamorphs is a cybersecurity research project developed within a capstone context at
+          Image Shield is a cybersecurity research project developed within a capstone context at
           the Southern Alberta Institute of Technology (SAIT). This work explores steganography and
           digital watermarking as proactive defenses against generative AI–driven image
           manipulation. As synthetic media technologies continue to evolve, the need for technical
