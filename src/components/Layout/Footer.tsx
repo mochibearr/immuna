@@ -4,7 +4,7 @@ export default function Footer() {
       className="w-full py-5 text-center text-xs border-t"
       style={{ borderColor: "var(--border)", color: "var(--muted-foreground)" }}
     >
-      Stegamorphs © 2026 | A Capstone Project in Digital Security
+      Immuna © 2026 | A Capstone Project in Digital Security
     </footer>
   );
 }

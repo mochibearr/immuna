@@ -1,102 +1,98 @@
 import { Monitor, Server, Lock, CheckCircle2, ArrowRight } from "lucide-react";
 import Card from "../ui/Card";
- 
+
 const STEPS = [
   {
-    icon: <Monitor className="w-5 h-5" />,
-    label: "Frontend",
-    sub: "React + TypeScript",
-    active: false,
-    borderColor: "#F8BBD9",
-    iconBg: "#FDE8F1",
+    icon: Monitor,
+    label: "User",
+    sub: "Web Application\n(React)",
   },
   {
-    icon: <Server className="w-5 h-5" />,
-    label: "Backend API",
-    sub: "FastAPI/Flask",
-    active: false,
-    borderColor: "#CDB4DB",
-    iconBg: "#EDE0F5",
+    icon: Server,
+    label: "Cloud",
+    sub: "Azure VM\nnginx (TLS / HTTPS)\nContainerized Docker",
   },
   {
-    icon: <Lock className="w-5 h-5" />,
-    label: "Processing",
-    sub: "Docker Container",
-    active: true,
-    borderColor: "#9F86C0",
-    iconBg: "#CDB4DB",
+    icon: Lock,
+    label: "Engine",
+    sub: "Python\nFastAPI Back End\nContainerized Docker",
   },
   {
-    icon: <CheckCircle2 className="w-5 h-5" />,
-    label: "Result",
-    sub: "Transformed Image",
-    active: false,
-    borderColor: "#F8BBD9",
-    iconBg: "#FDE8F1",
+    icon: CheckCircle2,
+    label: "Output",
+    sub: "Protected Image\nAI Manipulation Fails / Degrades",
   },
 ];
- 
-export default function TechnicalArchitecture() {
+
+export default function SystemArchitecture() {
   return (
     <Card>
       <div className="flex items-center gap-3 mb-6">
         <div
-          className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-          style={{ backgroundColor: "var(--secondary)" }}
+          className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+          style={{ backgroundColor: "var(--muted)" }}
         >
-          <Server className="w-5 h-5" style={{ color: "var(--accent)" }} />
+          <Server className="w-5 h-5" style={{ color: "#c7d4f0" }} />
         </div>
         <h2 className="text-lg font-semibold" style={{ color: "var(--foreground)" }}>
-          Technical Architecture
+          System Architecture
         </h2>
       </div>
- 
-      <div
-        className="rounded-xl p-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0 my-2"
-        style={{ backgroundColor: "rgba(240, 238, 245, 0.5)" }}
-      >
-        {STEPS.map((step, i) => (
-          <div key={step.label} className="flex items-center">
-            <div
-              className="flex flex-col items-center gap-3 p-5 rounded-2xl w-48"
-              style={{
-                border: `2px solid ${step.borderColor}`,
-                backgroundColor: "var(--card)",
-                boxShadow: step.active ? "0 2px 12px rgba(159,134,192,0.15)" : "none",
-              }}
-            >
-              <div
-                className="w-10 h-10 rounded-full flex items-center justify-center"
-                style={{ backgroundColor: step.iconBg, color: "var(--accent)" }}
-              >
-                {step.icon}
+
+      <div className="rounded-xl p-5 md:p-6 my-2" style={{ backgroundColor: "transparent" }}>
+        <div className="flex items-center justify-center gap-4">
+          {STEPS.map((step, i) => {
+            const Icon = step.icon;
+
+            return (
+              <div key={step.label} className="flex items-center">
+                <div
+                  className="flex flex-col items-center justify-center gap-3 rounded-2xl w-[240px] h-[230px] shrink-0"
+                  style={{
+                    border: "2px solid #c7d4f0",
+                    backgroundColor: "rgba(10, 10, 15, 0.92)",
+                  }}
+                >
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center"
+                    style={{
+                      backgroundColor: "#11131c",
+                      color: "#ffffff",
+                    }}
+                  >
+                    <Icon className="w-5 h-5" />
+                  </div>
+
+                  <div className="text-center px-4">
+                    <p className="text-base font-semibold tracking-wide" style={{ color: "#ffffff" }}>
+                      {step.label}
+                    </p>
+                    <p
+                      className="text-sm md:text-base leading-tight mt-1 whitespace-pre-line"
+                      style={{ color: "#c7d4f0" }}
+                    >
+                      {step.sub}
+                    </p>
+                  </div>
+                </div>
+
+                {i < STEPS.length - 1 && (
+                  <div className="w-10 h-[230px] flex items-center justify-center shrink-0">
+                    <ArrowRight className="w-5 h-5" style={{ color: "#c7d4f0" }} />
+                  </div>
+                )}
               </div>
-              <div className="text-center">
-                <p className="text-base font-semibold" style={{ color: "var(--foreground)" }}>
-                  {step.label}
-                </p>
-                <p className="text-base mt-0.5" style={{ color: "var(--accent)" }}>
-                  {step.sub}
-                </p>
-              </div>
-            </div>
-            {i < STEPS.length - 1 && (
-              <ArrowRight
-                className="w-5 h-5 mx-3 hidden sm:block flex-shrink-0"
-                style={{ color: "var(--accent)" }}
-              />
-            )}
-          </div>
-        ))}
+            );
+          })}
+        </div>
       </div>
- 
-      <p className="text-base leading-relaxed mt-4" style={{ color: "var(--muted-foreground)" }}>
-        Our architecture ensures complete data isolation at every stage. The frontend communicates
-        with a stateless REST API that spawns ephemeral processing containers. Each request is
-        handled independently with no shared state, and all resources are released immediately
-        after the response is sent.
+
+      <p className="text-base leading-relaxed mt-4" style={{ color: "#bcb1da" }}>
+        The architecture keeps the frontend, cloud entry point, processing engine, and output stage
+        separated into isolated layers. Requests move through the system one step at a time, and the
+        processing backend runs in an ephemeral container so the image can be handled without
+        long-term retention.
       </p>
     </Card>
   );
 }
- 

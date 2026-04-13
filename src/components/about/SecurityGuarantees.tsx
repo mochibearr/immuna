@@ -57,7 +57,7 @@ export default function SecurityGuarantees() {
               >
                 {item.title}
               </h3>
-              <p className="text-base leading-relaxed" style={{ color: "var(--muted-foreground)" }}>
+              <p className="text-base leading-relaxed" style={{ color: "#bcb1da" }}>
                 {item.desc}
               </p>
             </div>

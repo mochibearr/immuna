@@ -30,19 +30,20 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
               className="w-full h-full object-contain"
               style={{ 
                 transform: "rotate(90deg)",
-                filter: "drop-shadow(0 0 4px rgba(83, 61, 112, 0.18))"
+                filter: "drop-shadow(0 0 4px rgb(126, 78, 189))"
               }}
             />
           </div>
 
           <div className="text-left">
-            <div className="text-base font-semibold leading-tight text-black">
+            <div 
+              className="text-base font-semibold leading-tight"
+              style={{ color: "#412574"
+              }}
+            >
               Immuna
             </div>
-            <div className="text-sm leading-tight text-black/80">
-              Group 6 - Stegamorphs Capstone Project 2026
             </div>
-          </div>
         </button>
 
         <nav className="flex items-center gap-8">
@@ -53,8 +54,8 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
               className="text-base capitalize transition-colors hover:text-[#1A1A24]"
               style={{
                 color: currentPage === page
-                ? "#1A1A24"
-                : "rgba(26,26,36,0.6)",
+                ? "#412574"
+                : "#634e9c",
               fontWeight: currentPage === page ? 500 : 400,
               }}
             >
@@ -63,7 +64,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
           ))}
 
           <a
-            href="https://github.com/mochibearr/stegamorphs"
+            href="https://github.com/mochibearr/immuna"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-opacity hover:opacity-70 text-white"

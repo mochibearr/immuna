@@ -13,9 +13,9 @@ export default function AcademicContext() {
         Academic Context
       </h2>
 
-      <div className="space-y-4 text-base leading-relaxed" style={{ color: "var(--muted-foreground)" }}>
+      <div className="space-y-4 text-base leading-relaxed" style={{ color: "#bcb1da" }}>
         <p>
-          Image Shield is a cybersecurity research project developed within a capstone context at
+          Immuna is a cybersecurity research project developed at
           the Southern Alberta Institute of Technology (SAIT). This work explores steganography and
           digital watermarking as proactive defenses against generative AI–driven image
           manipulation. As synthetic media technologies continue to evolve, the need for technical
@@ -38,7 +38,7 @@ export default function AcademicContext() {
         style={{ borderColor: "var(--border)" }}
       >
         {META.map(({ label, value }) => (
-          <p key={label} className="text-base" style={{ color: "var(--muted-foreground)" }}>
+          <p key={label} className="text-base" style={{ color: "#bcb1da" }}>
             <span className="font-semibold" style={{ color: "var(--foreground)" }}>
               {label}:
             </span>{" "}
