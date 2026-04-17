@@ -31,32 +31,37 @@ export default function ProjectMotivation() {
 
       <div className="space-y-4 text-base leading-relaxed" style={{ color: "#bcb1da" }}>
         <p>
-          Generative AI tools are increasingly capable of manipulating and synthesizing images with
-          unprecedented realism. While these technologies offer creative potential, they also enable
-          sophisticated attacks including deepfakes, synthetic identity fraud, and non-consensual
-          image manipulation at scale.
+          Modern AI image editing tools can realistically modify faces, environments, and identities with minimal effort.
+          While powerful, these capabilities introduce serious risks:
         </p>
+
+        <ul className="list-disc ml-6 space-y-1">
+          <li>Non-consensual image manipulation and synthethic explicit content.</li>
+          <li>Identity misuse and deepfake generation.</li>
+          <li>Harassment, reputational damage, and misinformation.</li>
+          <li>Unauthorized reuse of personal or creative media.</li>
+        </ul>
+
         <p>
-          There is currently no dedicated deepfake-specific offence in the Canadian Criminal Code.
-          Existing laws are reactive in nature and typically apply only when harm overlaps with
-          established offences such as harassment, extortion, defamation, or child exploitation.
-          Victims often must prove tangible harm after malicious content has already been
-          distributed—a burden that becomes increasingly difficult as AI-generated content scales
-          globally and spreads anonymously across platforms.
+          Current safeguards are largely reactive:
         </p>
+
+        <ul className="list-disc ml-6 space-y-1">
+          <li>Detection occurs after content is already distributed.</li>
+          <li>Reporting and moderation are inconsistent and slow.</li>
+          <li>Watermarks and visible protections are easily removed.</li>
+        </ul>
+
         <p>
-          The challenge of attribution and enforcement grows exponentially when synthetic media can
-          be created in seconds, distributed across jurisdictional boundaries, and reshared through
-          decentralized channels. While regulation is evolving, AI misuse is scaling faster than
-          legislative frameworks can adapt.
+          This creates a fundamental gap:
+          <br />
+          <span className="font-bold">
+          Images can be manipulated long before any protection or response is applied.
+          </span>
         </p>
-        <p style={{ color: "#a894df" }}>
-          This project explores steganography and digital watermarking as proactive technical
-          safeguards. By embedding cryptographic signatures and provenance metadata directly into
-          image data, we can create verifiable chains of custody that persist through
-          transformations. Rather than waiting for harm to occur, these techniques enable
-          authentication, tampering detection, and accountability—technical countermeasures that
-          complement legal and policy responses to AI-driven threats.
+
+        <p>
+          Immuna addresses this by embedding protection directly into the image itself, before exposure to AI systems.
         </p>
       </div>
     </Card>

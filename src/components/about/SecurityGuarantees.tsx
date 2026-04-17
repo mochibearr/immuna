@@ -3,28 +3,28 @@ import Card from "../ui/Card";
 
 const GUARANTEES = [
   {
-    title: "In-Memory Processing",
-    desc: "All uploaded images are processed entirely in-memory. No data touches persistent storage at any point in the pipeline.",
+    title: "Ephemeral Processing",
+    desc: "Images are processed in-memory and are never written to disk.",
   },
   {
-    title: "Zero Persistence",
-    desc: "Images are immediately discarded after processing. We maintain no logs, no databases, and no long-term storage of any kind.",
+    title: "Zero Data Retention",
+    desc: "No images, logs, or user data are stored after processing.",
   },
   {
-    title: "No Third-Party Sharing",
+    title: "Isolated Execution",
     desc: "Your images never leave our secure processing environment. We don't use third-party analytics, CDNs, or external services.",
   },
   {
     title: "Containerized Isolation",
-    desc: "Backend processes run in isolated Docker containers with strict resource limits and network policies.",
+    desc: "Backend processing runs in containerized environments with strict boundaries.",
   },
   {
-    title: "Input Validation",
-    desc: "Strict file type checking, size limits (10MB max), and format validation prevent malicious uploads.",
+    title: "Input Safeguards",
+    desc: "Validation ensures only safe file types and sizes are processed.",
   },
   {
-    title: "Secure Transport",
-    desc: "All communications are encrypted in transit using TLS 1.3 with modern cipher suites.",
+    title: "Secure Connection",
+    desc: "All data is transmitted over encrypted HTTPS connections.",
   },
 ];
 
@@ -41,6 +41,14 @@ export default function SecurityGuarantees() {
         <h2 className="text-lg font-semibold" style={{ color: "var(--foreground)" }}>
           Security &amp; Privacy Guarantees
         </h2>
+
+        <p
+        className="text-sm mt-1 leading-relaxed"
+        style={{ color: "#bcb1da" }}
+        >
+        Designed with a privacy-first architecture to ensure secure, ephemeral image processing.
+        </p>
+        
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">

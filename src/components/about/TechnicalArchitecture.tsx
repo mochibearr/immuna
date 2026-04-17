@@ -88,10 +88,10 @@ export default function SystemArchitecture() {
       </div>
 
       <p className="text-base leading-relaxed mt-4" style={{ color: "#bcb1da" }}>
-        The architecture keeps the frontend, cloud entry point, processing engine, and output stage
-        separated into isolated layers. Requests move through the system one step at a time, and the
-        processing backend runs in an ephemeral container so the image can be handled without
-        long-term retention.
+        The architecture enforces strict separation between the frontend, cloud entry point, processing engine, and output layers, 
+        ensuring controlled data flow and execution boundaries. Each request is processed sequentially, with the backend operating 
+        in an ephemeral, containerized environment. This approach minimizes data exposure by eliminating persistent storage and 
+        ensures images are handled securely during processing.
       </p>
     </Card>
   );

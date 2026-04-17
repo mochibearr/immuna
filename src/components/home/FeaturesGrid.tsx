@@ -4,21 +4,21 @@ import FeatureCard from "../ui/FeatureCard";
 const FEATURES = [
   {
     icon: <Shield className="w-5 h-5" />,
-    title: "Secure Embedding",
+    title: "Proactive Defense",
     description:
-      "Advanced LSB steganography ensures your data remains hidden within the image structure.",
+      "Images are immunized at the source using model-aware pertubations designed to interfere with AI editing systems.",
   },
   {
     icon: <Star className="w-5 h-5" />,
-    title: "Lossless Quality",
+    title: "Visual Integrity Preserved",
     description:
-      "Maintain visual fidelity while embedding your secret message in the image data.",
+      "Protection is applied without noticeable impact to human perception, maintaining near-original image quality.",
   },
   {
     icon: <Zap className="w-5 h-5" />,
-    title: "Fast Processing",
+    title: "Real-Time Processing",
     description:
-      "Our optimized backend processes images quickly without compromising security.",
+      "Optimized backend pipelines enable fast, interactive image protection with immediate feedback.",
   },
 ];
 

@@ -32,9 +32,8 @@ export default function HomePage() {
         <h1 className="text-3xl md:text-4xl font-semibold mb-3" style={{ color: "var(--foreground)" }}>
           Protecting Image Authenticity Against AI Manipulation
         </h1>
-        <p className="max-w-3xl mx-auto text-sm md:text-base leading-relaxed" style={{ color: "#bcb1da" }}>
-          A privacy-first cybersecurity research platform that embeds cryptographic watermarks into
-          images. Detect tampering, verify authenticity, and establish provenance—without storing your data.
+        <p className="max-w-2xl mx-auto text-sm md:text-base leading-relaxed" style={{ color: "#bcb1da" }}>
+          A proactive image protection platform that embeds imperceptible, AI-disruptive signals directly into images - preventing manipulation before it happens.
         </p>
       </section>
  
