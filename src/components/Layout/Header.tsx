@@ -38,7 +38,10 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
           <div className="text-left">
             <div 
               className="text-base font-semibold leading-tight"
-              style={{ color: "#412574"
+              style={{ 
+                color: "#65508c",
+                fontFamily: "'Monument Extended', sans-serif",
+                textTransform: "uppercase"
               }}
             >
               Immuna
