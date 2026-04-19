@@ -8,7 +8,7 @@ export default function HeroSection() {
         Why We Built Immuna
       </h2>
       <p
-        className="max-w-3xl mx-auto text-base leading-relaxed"
+        className="max-w-4xl mx-auto text-base leading-relaxed"
         style={{ color: "#bcb1da" }}
       >
         As generative AI becomes more accessible, image manipulation is no longer limited to experts. Anyone can alter photos in seconds—often without consent, context, or accountability.

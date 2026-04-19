@@ -15,29 +15,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
-/* :root {
-  --font-size: 16px;
-  --background: #FAF7FF;
-  --foreground: #2B2D42;
-  --card: #ffffff;
-  --card-foreground: #2B2D42;
-  --primary: #F8BBD9;
-  --primary-foreground: #2B2D42;
-  --secondary: #CDB4DB;
-  --secondary-foreground: #2B2D42;
-  --muted: #f0eef5;
-  --muted-foreground: #6b6d7f;
-  --accent: #9F86C0;
-  --accent-foreground: #ffffff;
-  --destructive: #d4183d;
-  --border: rgba(159, 134, 192, 0.2);
-  --ring: #9F86C0;
-  --radius: 1rem;
-  --font-weight-medium: 500;
-  --font-weight-normal: 400;
-}
-*/
 
 :root {
   --font-size: 16px;
