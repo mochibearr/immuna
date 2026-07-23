@@ -9,9 +9,10 @@ if [[ -x "${VENV_DIR}/bin/activate" ]]; then
   source "${VENV_DIR}/bin/activate"
 fi
 
-MODEL_DIR="${PHOTOGUARD_MODEL_DIR:-/workspace/artifacts/sdxl_local_inpaint_model}"
+MODEL_DIR="${PHOTOGUARD_MODEL_DIR:-/workspace/models/sdxl_inpaint}"
 if [[ ! -f "${MODEL_DIR}/model_index.json" ]]; then
   for candidate in \
+    /workspace/models/sdxl_inpaint \
     /workspace/models/sdxl_local_inpaint_model \
     /workspace/artifacts/sdxl_local_inpaint_model \
     /workspace/local_inpaint_model \
@@ -29,8 +30,8 @@ export PHOTOGUARD_LOCAL_FILES_ONLY="${PHOTOGUARD_LOCAL_FILES_ONLY:-1}"
 export PHOTOGUARD_ENABLE_XFORMERS="${PHOTOGUARD_ENABLE_XFORMERS:-1}"
 export PHOTOGUARD_ENABLE_UNET_CHECKPOINTING="${PHOTOGUARD_ENABLE_UNET_CHECKPOINTING:-0}"
 export PHOTOGUARD_ENABLE_VAE_CHECKPOINTING="${PHOTOGUARD_ENABLE_VAE_CHECKPOINTING:-0}"
-export PHOTOGUARD_REQUIRE_FULL_STRENGTH="${PHOTOGUARD_REQUIRE_FULL_STRENGTH:-1}"
-export PHOTOGUARD_DEFAULT_IMMUNIZATION_PROFILE="${PHOTOGUARD_DEFAULT_IMMUNIZATION_PROFILE:-surrogate_deevid}"
+export PHOTOGUARD_REQUIRE_FULL_STRENGTH="${PHOTOGUARD_REQUIRE_FULL_STRENGTH:-0}"
+export PHOTOGUARD_DEFAULT_IMMUNIZATION_PROFILE="${PHOTOGUARD_DEFAULT_IMMUNIZATION_PROFILE:-surrogate_hybrid}"
 export PHOTOGUARD_COMPILE="${PHOTOGUARD_COMPILE:-0}"
 export PYTORCH_CUDA_ALLOC_CONF="${PYTORCH_CUDA_ALLOC_CONF:-expandable_segments:True}"
 export HF_HOME="${HF_HOME:-/workspace/.cache/huggingface}"

@@ -62,12 +62,12 @@ export const IMMUNIZATION_PROFILE_DETAILS: Record<ImmunizationProfile, Immunizat
   surrogate_deevid: {
     label: "Surrogate DeeVid",
     summary:
-      "DeeVid-focused surrogate profile. Keeps the stronger SDXL denoiser path and only adds a light CLIP/DINO layer instead of the full hybrid mix.",
+      "DeeVid-focused surrogate profile. Currently more expensive and less reliable than the hybrid default; keep it for targeted experiments.",
   },
   surrogate_hybrid: {
     label: "Surrogate hybrid",
     summary:
-      "Broader defense profile that keeps SD denoiser losses while adding CLIP, DINO, face-ID, and cleanup surrogates for NB2-style editors.",
+      "Best current deployment profile. Keeps SD denoiser losses while adding CLIP, DINO, face-ID, and cleanup surrogates with better DeeVid behavior than the DeeVid-only profile.",
   },
   nano_banana_2_hard_block: {
     label: "Nano Banana 2 hard block",
@@ -85,8 +85,8 @@ export const IMMUNIZATION_PROFILE_GROUPS: ImmunizationProfileGroup[] = [
   {
     label: "Recommended",
     options: [
-      { value: "surrogate_deevid", label: IMMUNIZATION_PROFILE_DETAILS.surrogate_deevid.label },
       { value: "surrogate_hybrid", label: IMMUNIZATION_PROFILE_DETAILS.surrogate_hybrid.label },
+      { value: "surrogate_deevid", label: IMMUNIZATION_PROFILE_DETAILS.surrogate_deevid.label },
       { value: "nano_banana_2", label: IMMUNIZATION_PROFILE_DETAILS.nano_banana_2.label },
       { value: "stable_diffusion", label: IMMUNIZATION_PROFILE_DETAILS.stable_diffusion.label },
     ],

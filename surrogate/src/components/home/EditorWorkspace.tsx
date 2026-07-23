@@ -38,13 +38,13 @@ export default function EditorWorkspace({ onProcess, isLoading, error }: EditorW
   const [guidanceScale, setGuidanceScale] = useState(7.5);
   const [numInferenceSteps, setNumInferenceSteps] = useState(100);
   const [immunize, setImmunize] = useState(false);
-  const [immunizationProfile, setImmunizationProfile] = useState<ImmunizationProfile>("surrogate_deevid");
+  const [immunizationProfile, setImmunizationProfile] = useState<ImmunizationProfile>("surrogate_hybrid");
   const [workingResolution, setWorkingResolution] = useState<WorkingResolution>("1024");
   const [outputFormat, setOutputFormat] = useState<OutputFormat>("png");
   const [losslessOutput, setLosslessOutput] = useState(true);
   const [brushSize, setBrushSize] = useState(36);
   const [defenseCanvas, setDefenseCanvas] = useState<DefenseCanvas>("profile_default");
-  const [forceFullStrength, setForceFullStrength] = useState(true);
+  const [forceFullStrength, setForceFullStrength] = useState(false);
   const [immunizationIters, setImmunizationIters] = useState("");
   const [eotSamples, setEotSamples] = useState("");
   const [maxPromptVariants, setMaxPromptVariants] = useState("");
