@@ -39,6 +39,11 @@ export const IMMUNIZATION_PROFILE_DETAILS: Record<ImmunizationProfile, Immunizat
     summary:
       "Research scaffold for aesthetic restyling and look-transfer pipelines that preserve composition while rewriting texture.",
   },
+  artist_cloak: {
+    label: "Artist cloak",
+    summary:
+      "Artwork-focused profile with Glaze/Mist-style texture cloaking plus a stronger ArtShield-like ownership watermark path.",
+  },
   text_aware_scaffold: {
     label: "Scaffold: text-aware",
     summary:
@@ -94,6 +99,7 @@ export const IMMUNIZATION_PROFILE_GROUPS: ImmunizationProfileGroup[] = [
       { value: "instruction_editing_scaffold", label: IMMUNIZATION_PROFILE_DETAILS.instruction_editing_scaffold.label },
       { value: "controlnet_scaffold", label: IMMUNIZATION_PROFILE_DETAILS.controlnet_scaffold.label },
       { value: "style_transfer_scaffold", label: IMMUNIZATION_PROFILE_DETAILS.style_transfer_scaffold.label },
+      { value: "artist_cloak", label: IMMUNIZATION_PROFILE_DETAILS.artist_cloak.label },
       { value: "text_aware_scaffold", label: IMMUNIZATION_PROFILE_DETAILS.text_aware_scaffold.label },
       { value: "adversarial_hardened_scaffold", label: IMMUNIZATION_PROFILE_DETAILS.adversarial_hardened_scaffold.label },
     ],

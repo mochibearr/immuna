@@ -9,6 +9,7 @@ export type ImmunizationProfile =
   | "instruction_editing_scaffold"
   | "controlnet_scaffold"
   | "style_transfer_scaffold"
+  | "artist_cloak"
   | "text_aware_scaffold"
   | "adversarial_hardened_scaffold"
   | "nano_banana_experimental"

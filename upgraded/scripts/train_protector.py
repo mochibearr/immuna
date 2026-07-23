@@ -6,6 +6,7 @@ import json
 import math
 import random
 import sys
+import warnings
 from pathlib import Path
 from typing import Any
 
@@ -410,7 +411,20 @@ def _compute_real_face_id_similarity(
 def _maybe_build_lpips(disabled: bool, device: torch.device) -> nn.Module | None:
     if disabled or lpips is None:
         return None
-    model = lpips.LPIPS(net="vgg")
+    # LPIPS still instantiates torchvision VGG via the deprecated pretrained flag.
+    # Silence that third-party warning until the upstream package updates.
+    with warnings.catch_warnings():
+        warnings.filterwarnings(
+            "ignore",
+            message="The parameter 'pretrained' is deprecated since 0.13",
+            category=UserWarning,
+        )
+        warnings.filterwarnings(
+            "ignore",
+            message="Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13",
+            category=UserWarning,
+        )
+        model = lpips.LPIPS(net="vgg")
     model = model.to(device=device)
     model.eval()
     for parameter in model.parameters():
@@ -641,7 +655,8 @@ def main() -> int:
         lr=args.learning_rate,
         weight_decay=args.weight_decay,
     )
-    scaler = torch.cuda.amp.GradScaler(enabled=args.amp and device.type == "cuda")
+    amp_enabled = args.amp and device.type == "cuda"
+    scaler = torch.amp.GradScaler("cuda", enabled=amp_enabled)
     lpips_model = _maybe_build_lpips(args.disable_lpips, device)
     face_id_model = _maybe_build_face_id_model(args.face_id_backend, device)
     effective_face_id_backend = args.face_id_backend if face_id_model is not None else "none"
@@ -681,7 +696,7 @@ def main() -> int:
             input_tensor = torch.cat([source, mask], dim=1)
 
             optimizer.zero_grad(set_to_none=True)
-            with torch.cuda.amp.autocast(enabled=scaler.is_enabled()):
+            with torch.amp.autocast("cuda", enabled=amp_enabled):
                 pred_delta = args.max_epsilon * torch.tanh(model(input_tensor))
                 pred_protected = (source + pred_delta).clamp(0.0, 1.0)
 

@@ -120,6 +120,18 @@ Optional real face-ID branch:
 
 `cd /home/tobi/photoguard/upgraded && pip install --no-deps facenet-pytorch`
 
+Recommended cache setup before the first FaceNet-backed run:
+
+`export TORCH_HOME=/workspace/.cache/torch`
+
+Quick verification:
+
+`cd /home/tobi/photoguard/upgraded && python -c "from facenet_pytorch import InceptionResnetV1; InceptionResnetV1(pretrained='vggface2').eval(); print('facenet ready')"`
+
+Enable the real face-ID losses during training:
+
+`cd /home/tobi/photoguard/upgraded && python scripts/train_protector.py --manifest /path/to/teacher/manifest.jsonl --output-dir /path/to/run --face-id-backend facenet --real-face-id-weight 0.12 --real-face-id-drift-weight 0.06`
+
 Do not run a blind `pip install xformers` in the RunPod training venv. It can replace the working `torch==2.8.0+cu128` stack with incompatible CUDA 13 wheels.
 
 Notable training features now included:
@@ -130,6 +142,8 @@ Notable training features now included:
 - portrait face branch with both heuristic face descriptors and optional real FaceNet embeddings
 - purification-aware consistency losses
 - selective perturbation weighting for better visual fidelity
+- optional Glaze/Mist-inspired style-cloak statistics in the backend immunizer
+- optional ArtShield-style multi-view ownership watermark alignment plus the `artist_cloak` research profile
 
 Generate a teacher set:
 
